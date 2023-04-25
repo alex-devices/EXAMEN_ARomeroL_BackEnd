@@ -1,6 +1,7 @@
 package ValenciaHubBackEnd_Hub;
 import java.util.Objects;
 import java.io.Serializable;
+//Alejandro Romero Lorenzo - 20509297J
 public class Hub implements Serializable{
 
     private contenedor[][] hubC;
@@ -98,5 +99,21 @@ public class Hub implements Serializable{
         }
         return contador; //DEVUELVE EL CONTADOR
     }
+
+    //MÉTODO PESO CONTENEDORES
+    public String chequearEnAduana(int peso){
+        String aDevolver="Se han modificado los siguientes contenedores:\nID\tEMISOR\tPESO\tADUANAS\n";
+        for (int i = 0; i < hubC.length; i++) {
+            for (int j = 0; j < hubC[0].length; j++) {
+                if(hubC[i][j]!=null&&hubC[i][j].getPeso()>=peso){
+                    hubC[i][j].setAduanas(true); //PONEMOS ADUANAS A TRUE
+                    aDevolver+=hubC[i][j].getId()+"\t"+hubC[i][j].getEmisor()+"\t"+hubC[i][j].getPeso()+"\t"+hubC[i][j].isAduanas()+"\n"; //DEVOLVEMOS STRING CON DATOS SOLICITADOS
+                }
+            }
+
+        }
+        return aDevolver;
+    }
+
 }
 

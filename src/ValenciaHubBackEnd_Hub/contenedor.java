@@ -1,5 +1,6 @@
 package ValenciaHubBackEnd_Hub;
 import java.io.Serializable;
+//Alejandro Romero Lorenzo - 20509297J
 public class contenedor implements Serializable{
     private final int id;
     private int peso, prioridad;

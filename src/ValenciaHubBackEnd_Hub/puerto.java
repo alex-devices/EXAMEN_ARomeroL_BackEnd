@@ -2,7 +2,7 @@ package ValenciaHubBackEnd_Hub;
 import java.io.Serializable;
 
 import java.util.Arrays;
-
+//Alejandro Romero Lorenzo - 20509297J
 public class puerto implements Serializable{
     private Hub[] P;
 
@@ -52,5 +52,9 @@ public class puerto implements Serializable{
 
     public int contadorPaises(int hub, String país){
         return P[hub].contadorPaises(país);
+    }
+
+    public String chequearenAduana(int peso, int hub){
+        return P[hub].chequearEnAduana(peso);
     }
 }
